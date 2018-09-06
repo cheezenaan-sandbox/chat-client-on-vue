@@ -62,5 +62,5 @@ typings/
 # next.js build output
 .next
 
-# builded assets
+# builded assets from webpack
 dist/
