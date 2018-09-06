@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  client:
+    container_name: client
+    init: true
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.dev
+    volumes:
+      - .:/app:${CONSISTENCY:-cached}
+      - /app/node_modules
