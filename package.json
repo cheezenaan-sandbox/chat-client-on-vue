@@ -8,6 +8,7 @@
     "@types/webpack": "^4.4.11",
     "@types/webpack-serve": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.14.2",
     "ts-loader": "^5.0.0",
     "typescript": "^3.0.3",
     "webpack": "^4.17.2",
@@ -16,6 +17,7 @@
   },
   "scripts": {
     "build": "webpack --config config/webpack.config.js",
+    "format": "prettier src/**/* --write",
     "serve": "webpack-serve --config config/serve.config.js",
     "watch": "webpack --config config/webpack.config.js --watch"
   }
