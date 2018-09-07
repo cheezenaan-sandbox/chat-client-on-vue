@@ -9,12 +9,18 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
+  resolve: {
+    extensions: ['.ts', '.js']
+  },
   entry: {
-    bundle: './src/javascripts/index.js'
+    bundle: './src/javascripts/index.ts'
   },
   output: {
     path: path.join(__dirname, '../dist'),
     filename: '[name].js'
+  },
+  module: {
+    rules: [{ test: /.ts$/, loader: 'ts-loader' }]
   },
   plugins: [htmlWebpackPlugin],
   devtool: isProduction ? 'eval' : 'cheap-module-source-map'
