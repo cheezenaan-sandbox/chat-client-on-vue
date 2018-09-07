@@ -1,13 +1,13 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 const isProduction = process.env.NODE_ENV === 'production';
-
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
   template: path.join(__dirname, '../src/index.html')
 });
 
-module.exports = {
+/** @type webpack.Configuration */
+const config = {
   mode: process.env.NODE_ENV || 'development',
   resolve: {
     extensions: ['.ts', '.js']
@@ -25,3 +25,5 @@ module.exports = {
   plugins: [htmlWebpackPlugin],
   devtool: isProduction ? 'eval' : 'cheap-module-source-map'
 };
+
+module.exports = config;
