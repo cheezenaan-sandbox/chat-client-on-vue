@@ -2,8 +2,14 @@
   "env": {
     "browser": true
   },
-  "extends": ["airbnb-base", "plugin:prettier/recommended"],
-  "parser": "typescript-eslint-parser",
+  "extends": [
+    "airbnb-base",
+    "plugin:vue/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "parser": "typescript-eslint-parser"
+  },
   "plugins": ["typescript", "prettier"],
   "rules": {
     "no-undef": "off",
